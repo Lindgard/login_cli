@@ -10,3 +10,39 @@ Small C#/.NET CLI starter focused on secure local login flows. The goal is to co
 - load secrets/config via environment variables (e.g., pepper) and optional `appsettings.Development.json`
 - add minimal logging and validation (password strength, email format)
 - add basic tests covering register/login success and failure paths
+
+## Getting started
+
+Clone the repo:
+
+```sh
+git clone https://github.com/your-org/LoginApi.git
+cd LoginApi
+```
+
+### Run with Nix (recommended)
+
+Requires Nix with flakes enabled.
+
+```sh
+nix develop
+dotnet --version   # verify .NET SDK from the dev shell
+dotnet run -- --help
+```
+
+### Run without Nix
+
+Prereq: .NET SDK 9+ installed on your system (or 10 if available).
+
+```sh
+dotnet --version   # confirm SDK is available
+dotnet run -- --help
+```
+
+### Add Spectre.Console (for TUI/CLI rendering)
+
+Inside your environment (Nix shell or system SDK):
+
+```sh
+dotnet add package Spectre.Console
+```
